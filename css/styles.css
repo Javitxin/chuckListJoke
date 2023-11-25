@@ -9,63 +9,43 @@ body {
     height: 100vh;
 }
 
-;
 h1 {
     color: #333;
 }
 
-;
 button {
     margin-top: 10px;
     padding: 8px 16px;
     font-size: 16px;
     background-color: #007bff;
-    color: #fff;
     border: none;
     cursor: pointer;
-    width: 150px;
-    border-radius: 20px;
+    color: whitesmoke;
 }
 
-;
-.btnBorrar {
-    background-color: #007bff;
-    margin: 1px;
-    border-radius: 20px;
-}
-
-;
-.deleteAll {
-    width: 150px;
-    border-radius: 20px;
-}
-
-;
-;
 button:hover {
     background-color: #0056b3;
 }
 
 ul {
-    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 20px;
     gap: 20px;
-    border-radius: 20px;
 }
 
-;
 li {
     display: flex;
-    flex-direction: column;
-    background-color: whitesmoke;
-    text-align: center;
+    align-items: center;
+    background-color: grey;
+    text-align: start;
     list-style: none;
-    padding: 20px;
-    justify-content: center;
-    border-radius: 20px;
+    justify-content: space-between;
+    padding-left: 20px;
+    color: whitesmoke;
 }
 
-;
+.btnBorrar {
+    margin: 10px;
+}
