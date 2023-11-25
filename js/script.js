@@ -1,6 +1,8 @@
-// boton y listaº
+// boton y lista
 const fetchJoke = document.getElementById('fetchJoke');
 const jokeList = document.getElementById('jokeList');
+const deleteAll = document.getElementById('deleteAll');
+
 let arrChiste = [];
 let parsedJokes = [];
 
@@ -40,23 +42,24 @@ fetchJoke.addEventListener('click', () => {
             console.log(chistesAlmParse);
             const [ultmimoChiste] = chistesAlmParse.slice(-1);
             let pintarHtml = `<li>${ultmimoChiste}<button class='btnBorrar'>Borrar Chiste</button></li>`;
+            //let indiceChiste = ultmimoChiste.indexOf();
+            //console.log(indiceChiste);
             jokeList.innerHTML += pintarHtml;
         })
+})
+
+jokeList.addEventListener('click', (event) => {
+    //  nos da el li del boton selccionado
+    const listItem = event.target.closest('li');
+    listItem.innerHTML = '';
+    //localStorage.setItem("Chistes",JSON.stringify(parsedJokes));
+    console.log(listItem);
+
+    //listItem.innerHTML = '';
 
 })
 
-
-
-
-
-
-// chiste.length -1
-/*  chistesAlmParse.forEach(chiste => {
-                console.log(chiste);
-                const ultimoChiste = chiste[chiste.lenght - 1];
-                if (ultimoChiste != 'undefined') {
-                    console.log(ultimoChiste);
-                    let pintarHtml = `<li>${ultimoChiste}</li>`;
-                    jokeList.innerHTML += pintarHtml;
-                }
- */
+deleteAll.addEventListener('click', () => {
+    jokeList.innerHTML = '';
+    localStorage.clear();
+});
